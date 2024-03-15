@@ -1,0 +1,44 @@
+<nav class="bg-gray-800 p-4">
+  <div class="flex justify-between items-center">
+    <!-- Lado izquierdo: Título -->
+    <div class="flex-shrink-0">
+      <span class="text-white text-xl font-bold">Aseinfo</span>
+    </div>
+    <!-- Menú de hamburguesa (para dispositivos móviles) -->
+    <div class="flex items-center md:hidden">
+      <button (click)="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Lado derecho: Opciones de navegación -->
+    <div class="hidden md:flex items-center space-x-4">
+      <!-- Opción: Inicio -->
+      <a href="#" class="text-white hover:text-gray-300 text-lg">Inicio</a>
+      <!-- Opción: Productos -->
+      <a href="#" class="text-white hover:text-gray-300 text-lg">Productos</a>
+      <!-- Opción: Buscar -->
+      <a href="#" class="text-white hover:text-gray-300 text-lg">Buscar</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Componente de menú móvil (modal) -->
+@if(mobileMenuVisible){
+  <div class="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-50">
+    <!-- Botón para cerrar el menú -->
+    <button (click)="toggleMobileMenu()" class="absolute top-0 right-0 p-3 text-white">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <!-- Contenido del menú -->
+    <div class="flex flex-col space-y-4 text-white">
+      <a href="#" class="text-lg">Inicio</a>
+      <a href="#" class="text-lg">Productos</a>
+      <a href="#" class="text-lg">Buscar</a>
+    </div>
+  </div>
+
+}
