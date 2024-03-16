@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroImageComponent } from '../hero-image/hero-image.component';
-import { Product } from '../../shared/interfaces';
+import { Filtro, FiltroLimite, Product } from '../../shared/interfaces';
 import { FakeStoreApiService } from '../../services/fake-store-api.service';
 import { MasonryGridComponent } from '../masonry-grid/masonry-grid.component';
 import { DropdownChangeEvent, DropdownModule } from 'primeng/dropdown';
@@ -10,14 +10,6 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-
-interface Filtro {
-  name: string;
-}
-
-interface FiltroLimite {
-  name: number;
-}
 
 @Component({
   selector: 'app-home-screen',
@@ -100,11 +92,9 @@ export class HomeScreenComponent {
   }
 
   filterProductsByCategory(category: string) {
-    console.log(`Filtering products by category: ${category}`);
     this.filteredProductList = this.productList.filter(
       (product) => product.category === category
     );
-    console.log(`Result: ${this.filteredProductList.length} products found`);
   }
 
   filterByAlphabeticalOrderAsc() {

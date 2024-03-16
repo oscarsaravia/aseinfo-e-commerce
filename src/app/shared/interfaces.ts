@@ -12,3 +12,11 @@ export interface Rating {
   rate: number;
   count: number;
 }
+
+export interface Filtro {
+  name: string;
+}
+
+export interface FiltroLimite {
+  name: number;
+}
