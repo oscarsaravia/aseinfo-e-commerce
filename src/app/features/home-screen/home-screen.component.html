@@ -1,0 +1,21 @@
+<app-hero-image> </app-hero-image>
+<h1
+  class="mb-20 text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white justify-items-center items-center"
+>
+  Categorías populares
+</h1>
+<div
+  class="w-40 categories-section mb-3 grid-cols-1 lg:mb-20 grid sm:grid-cols-2 sm:grid-rows-2 gap-4 sm:place-items-stretch sm:w-[335px] m-auto lg:grid-cols-4 lg:grid-rows-1 lg:w-[840px]"
+>
+  @for (category of categoriesList; track category) {
+  <div
+    class="w-40 h-40 rounded-lg flex justify-center items-center px-1 bg-gradient-to-r from-sky-500 to-indigo-500 mb-4 area hover:scale-150 hover:border-black hover:border-2 hover:dark:border-white cursor-pointer"
+  >
+    <p class="text-white text-center">{{ category.toUpperCase() }}</p>
+  </div>
+  }
+</div>
+<app-masonry-grid
+  [productList]="productList"
+  [gridTitle]="'Productos Destacados'"
+></app-masonry-grid>
