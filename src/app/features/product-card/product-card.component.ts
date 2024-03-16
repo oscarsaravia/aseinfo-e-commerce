@@ -10,4 +10,11 @@ import { Product } from '../../shared/interfaces';
 })
 export class ProductCardComponent {
   @Input() product: Product;
+  showAdditionalInfo = false;
+  onHover() {
+    this.showAdditionalInfo = true;
+  }
+  onLeave() {
+    this.showAdditionalInfo = false;
+  }
 }

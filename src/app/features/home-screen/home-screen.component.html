@@ -15,7 +15,27 @@
   </div>
   }
 </div>
+<div class="center m-auto flex justify-center items-center">
+  <form [formGroup]="formGroup">
+    <p-dropdown
+      formControlName="selectedFilter"
+      [options]="filtros"
+      optionLabel="name"
+      placeholder="Aplicar Filtro"
+      (onChange)="onChange($event)"
+    ></p-dropdown>
+  </form>
+  <form [formGroup]="formGroup" class="ml-4">
+    <p-dropdown
+      formControlName="formGroupLimit"
+      [options]="filtrosLimite"
+      optionLabel="name"
+      placeholder="Aplicar Limite"
+      (onChange)="onLimitChange($event)"
+    ></p-dropdown>
+  </form>
+</div>
 <app-masonry-grid
-  [productList]="productList"
+  [productList]="filteredProductList"
   [gridTitle]="'Productos Destacados'"
 ></app-masonry-grid>

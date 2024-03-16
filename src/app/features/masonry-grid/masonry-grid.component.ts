@@ -12,4 +12,5 @@ import { Product } from '../../shared/interfaces';
 export class MasonryGridComponent {
   @Input() productList: Product[] = [];
   @Input() gridTitle: string = 'Sample title';
+  @Input() hasTitle: boolean = false;
 }

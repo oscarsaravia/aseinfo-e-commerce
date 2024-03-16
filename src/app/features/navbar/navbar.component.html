@@ -1,7 +1,7 @@
-<nav class="bg-gray-800 p-4 sticky top-0">
+<nav class="bg-gray-800 p-4 sticky top-0 z-50">
   <div class="flex justify-between items-center">
     <!-- Lado izquierdo: Título -->
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0" [routerLink]="['/']">
       <span class="text-white text-xl font-bold">Aseinfo</span>
     </div>
     <!-- Menú de hamburguesa (para dispositivos móviles) -->
@@ -27,12 +27,13 @@
     </div>
     <!-- Lado derecho: Opciones de navegación -->
     <div class="hidden md:flex items-center space-x-4">
-      <!-- Opción: Inicio -->
-      <a href="#" class="text-white hover:text-gray-300 text-lg">Inicio</a>
-      <!-- Opción: Productos -->
-      <a href="#" class="text-white hover:text-gray-300 text-lg">Productos</a>
       <!-- Opción: Buscar -->
-      <a href="#" class="text-white hover:text-gray-300 text-lg">Buscar</a>
+      <a
+        href="#"
+        class="text-white hover:text-gray-300 text-lg"
+        [routerLink]="['/search']"
+        >Buscar</a
+      >
     </div>
   </div>
 </nav>
@@ -58,9 +59,7 @@
   </button>
   <!-- Contenido del menú -->
   <div class="flex flex-col space-y-4 text-white">
-    <a href="#" class="text-lg">Inicio</a>
-    <a href="#" class="text-lg">Productos</a>
-    <a href="#" class="text-lg">Buscar</a>
+    <a href="#" class="text-lg" [routerLink]="['/search']">Buscar</a>
   </div>
 </div>
 

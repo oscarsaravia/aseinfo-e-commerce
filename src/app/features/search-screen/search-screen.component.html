@@ -1,0 +1,8 @@
+<app-search-input
+  (inputValueChange)="onInputValueChange($event)"
+></app-search-input>
+<app-masonry-grid
+  [gridTitle]="'Resultados de la búsqueda'"
+  [productList]="filteredList"
+  [hasTitle]="true"
+></app-masonry-grid>

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 import { HomeScreenComponent } from './features/home-screen/home-screen.component';
 import { NavbarComponent } from './features/navbar/navbar.component';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FooterComponent } from './features/footer/footer.component';
 
 @Component({
@@ -14,6 +14,7 @@ import { FooterComponent } from './features/footer/footer.component';
     HomeScreenComponent,
     NavbarComponent,
     RouterOutlet,
+    RouterLink,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
